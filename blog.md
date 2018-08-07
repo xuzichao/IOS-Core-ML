@@ -49,7 +49,6 @@
 深度学习是机器学习中一种基于对数据进行表征学习的方法，起源于人工神经网络，在前期机器学习并没有深度学习这样的学习模型。所以我们现在也认为它是属于深度学习属于机器学习范畴内。它试图使用包含复杂结构或由多重非线性变换构成的多个处理层对数据进行高层抽象的算法。
 
 #### 3.2 关系图：
- <img src='https://wiki.bytedance.net/pages/viewpage.action?pageId=88682290&preview=/88682290/88682774/AIMLDL.jpg'>
 
 ## 二、机器学习的应用发展：
 ### 2.1 发展：
@@ -83,7 +82,6 @@ Core ML 为设备性能进行了优化，从而减少了内存占用和功耗。
 Core ML 框架本身构建于低层面的原语（primitives）之上，比如 Accelerate、BNNS 和 Metal Performance Shaders；
 构建完成的Core Ml又作为其他更高级框架的基础，比如支持用于图像分析的 Vision 框架，用于自然语言处理的 Foundation类，以及用于评估已经学习到的决策树的 GameplayKit。结构图如下:
 
- <img src="https://wiki.bytedance.net/pages/viewpage.action?pageId=88682290&preview=/88682290/88682785/CoreMl.png">
 
 ### 3.2 支持的系统
 * iOS 11.0+Beta
@@ -105,12 +103,9 @@ Core ML 框架本身构建于低层面的原语（primitives）之上，比如 A
 * 新建demo工程，在工程target中在Build Phase的Link Binary With Libraries里，加上CoreML.framework系统框架。
 * 将获得的 CoreMl Model 添加至工程中，我们以GoogLeNetPlaces.mlmodel为例:
 
- <img src="https://wiki.bytedance.net/pages/viewpage.action?pageId=88682290&preview=/88682290/88682796/CoreMLXcode.jpg">
-
 
 * 注意中间有个Model Class ，点击查看api调用，有两点注意，输入参数为 CVPixelBufferRef 格式,图片需要是224X224像素的大小，所以需要自己写方法去转化为合适的参数。
 
- <img src="https://wiki.bytedance.net/pages/viewpage.action?pageId=88682290&preview=/88682290/88682811/GoogleAPI.jpg">
  
 * 调用示例
 ```
@@ -178,12 +173,10 @@ NSLog(@"Scene label is: %@", output.sceneLabel);
 #### 4.2.3 得到model结果
 我下载的bvlc_alexnet.caffemodel大小有244M左右，在终端中转化为CoreMl却基本没有转化耗时，可见苹果在开发工具的创造上下了功夫。我们得到了CoreML的模型如下图：
 
- <img src="![](https://wiki.bytedance.net/pages/viewpage.action?pageId=88682290&preview=/88682290/88682842/CoreMLFile.jpg)">
 
 
 直接在工程文件中，加入model,添加到对应的target
 
- <img src='![](https://wiki.bytedance.net/pages/viewpage.action?pageId=88682290&preview=/88682290/88682796/CoreMLXcode.jpg)' width = '300' height = '200' /> 
 
 
 
@@ -272,8 +265,6 @@ NSLog(@"Scene label is: %@", output.sceneLabel);
 
 #### 4.2 实时显示效果
 到官网下载安装配置，把手机升级到IOS11的beta版本后，将相机demo连上手机真机调试得到实时显示,当我移动手机对准不同画面时，相机底部会对应解析出识别结果:
-
-![](https://wiki.bytedance.net/pages/viewpage.action?pageId=88682290&preview=/88682290/88682877/coremlgif.gif)
 
 ## 六、小结
 
